@@ -8,4 +8,7 @@ class Product < ApplicationRecord
     self.is_sold = true
     self.save
   end
+
+  mount_uploader :image, ImageUploader
+
 end
