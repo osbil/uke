@@ -1,6 +1,16 @@
 <ul>
   <% @products.each do |product| %>
-
-    <li> <%= link_to(product.title, admin_product_path(product)) %> </li>
+	
+    <li> 
+		<%= render_product_status(product) %>
+    <%= link_to(product.title, admin_product_path(product)) %> 
+    </li>
+    <li>
+    	<% if product.is_sold %>
+    		<%= link_to("Publish", publish_admin_product_path(product) , :method => :post, :class => "btn btn-xs btn-default") %>
+  		<% else %>
+    		<%= link_to("Hide", hide_admin_product_path(product), :method => :post,  :class => "btn btn-xs btn-default") %>
+  		<% end %>
+    </li>
   <% end %>
 </ul>

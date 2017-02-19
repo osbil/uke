@@ -5,7 +5,7 @@ class Admin::ProductsController < ApplicationController
 	layout 'admin'
 
 	def index
-		@products = Product.all
+		@products = Product.order("created_at DESC")
 	end
 
 	def show
@@ -41,10 +41,26 @@ class Admin::ProductsController < ApplicationController
 		@product.destroy
 		redirect_to admin_products_path
 	end
+
+	 def publish
+    @product = Product.find(params[:id])
+    @product.publish!
+
+    redirect_to :back
+  end
+
+  def hide
+    @product = Product.find(params[:id])
+
+    @product.hide!
+
+    redirect_to :back
+  end
+
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :quantity, :price)
+    params.require(:product).permit(:title, :description, :quantity, :price, :is_sold)
   end
 
   def find_products
