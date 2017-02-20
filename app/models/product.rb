@@ -1,4 +1,7 @@
 class Product < ApplicationRecord
+
+	mount_uploader :image, ImageUploader
+	
 	def publish!
     self.is_sold = false
     self.save
@@ -9,6 +12,6 @@ class Product < ApplicationRecord
     self.save
   end
 
-  mount_uploader :image, ImageUploader
+  
 
 end
