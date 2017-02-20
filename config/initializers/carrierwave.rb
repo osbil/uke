@@ -7,11 +7,11 @@ CarrierWave.configure do |config|
 
       aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],        
 
-      region:                ENV["AWS_REGION"]    
+      region:                ENV["ap-northeast-1"]    
 
     }
     config.fog_provider = 'fog'
-    config.fog_directory  = ENV["AWS_BUCKET_NAME"] 
+    config.fog_directory  = ENV["uke-fan"] 
 
 
   else
