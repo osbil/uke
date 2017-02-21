@@ -9,6 +9,17 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="brand">创见 | Serendipity</div>
+    <div class="address-bar">成长路上，你我都不再孤独！</div>
+  	<div class="container-fluid">
+      <div class="row">
+        <%= render "common/navbar" %>
+      <%= render "common/flashes" %>
+      <%= yield %>
+      </div>
+  		
+    </div>
+    
+    <%= render "common/footer" %>
   </body>
 </html>
