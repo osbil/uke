@@ -9,12 +9,17 @@
   </head>
 
   <body>
+    <div class="brand">创见 | Serendipity</div>
+    <div class="address-bar">成长路上，你我都不再孤独！</div>
   	<div class="container-fluid">
-  		<%= render "common/navbar" %>
+      <div class="row">
+        <%= render "common/navbar" %>
       <%= render "common/flashes" %>
-    	<%= yield %>
+      <%= yield %>
+      </div>
+  		
     </div>
-    <%= render "common/footer" %>
     
+    <%= render "common/footer" %>
   </body>
 </html>
